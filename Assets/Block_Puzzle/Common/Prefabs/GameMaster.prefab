@@ -66,6 +66,8 @@ GameObject:
   - component: {fileID: 114790401893882846}
   - component: {fileID: 114352996081125404}
   - component: {fileID: 114653795478677252}
+  - component: {fileID: 114726404112546090}
+  - component: {fileID: 114294300863887314}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -1218,7 +1220,7 @@ Canvas:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194402}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
@@ -1227,6 +1229,7 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -910433823
   m_SortingOrder: -1
   m_TargetDisplay: 0
@@ -1237,7 +1240,7 @@ Canvas:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111610}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
@@ -1246,6 +1249,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -910433823
   m_SortingOrder: 1
   m_TargetDisplay: 0
@@ -1479,6 +1483,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c8a7c527c63454fa96a5f947bcdb1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114294300863887314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddc64c646c968e408bd98eff14360fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114352996081125404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1500,7 +1515,7 @@ MonoBehaviour:
       iosRewarded: ca-app-pub-1040245951644301/1682073020
     adPeriod: 90
     rewardedVideoPeriod: 120
-    rewardedVideoAmount: 4
+    rewardedVideoAmount: 2
     androidPackageID: com.supow.xtetris
     iosAppID: 1276080947
     facebookPageID: 416022028565283
@@ -1533,20 +1548,33 @@ MonoBehaviour:
   iapItems:
   - productID: tetris.item1
     productType: 0
-    value: 20
     price: 0.99
+    value: 20
   - productID: tetris.item2
     productType: 0
-    value: 50
     price: 1.99
+    value: 50
   - productID: tetris.item3
     productType: 0
-    value: 120
     price: 3.99
+    value: 120
   - productID: tetris.item4
     productType: 0
-    value: 200
     price: 5.99
+    value: 200
+--- !u!114 &114726404112546090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad81746867327114dbf52d7c49fcbcd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardZone: 0
+  isAdShowing: 0
 --- !u!114 &114790401893882846
 MonoBehaviour:
   m_ObjectHideFlags: 1

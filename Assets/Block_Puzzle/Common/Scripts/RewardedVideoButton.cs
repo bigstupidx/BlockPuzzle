@@ -20,7 +20,7 @@ public class RewardedVideoButton : MonoBehaviour
     {
         if (IsAvailableToShow())
         {
-            //TODO: ADD UNITY ADS CALL HERE
+            UnityAds.instance.ShowAd("rewardedVideo");
             //AdmobController.instance.ShowRewardBasedVideo();
         }
         else if (!IsActionAvailable())

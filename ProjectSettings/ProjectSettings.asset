@@ -10,7 +10,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Blast
+  companyName: Supow
   productName: Tetris Block Puzzle
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -538,19 +538,19 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    1: 
-    4: 
-    7: 
-    13: 
-    14: 
-    17: 
+    1: IAP
+    4: IAP;NO_GPGS
+    7: IAP
+    13: IAP
+    14: IAP
+    17: IAP
     18: 
     19: 
     20: 
     21: 
     22: 
     24: 
-    25: 
+    25: IAP
   platformArchitecture:
     iOS: 2
   scriptingBackend:

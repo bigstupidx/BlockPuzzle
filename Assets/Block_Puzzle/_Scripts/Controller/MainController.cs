@@ -449,13 +449,16 @@ public class MainController : BaseController {
     { 
         //remove rows
         Sound.instance.Play(Sound.Others.ClearRow);
+        int rowClearCount = 0;
         foreach (int r in rows)
         {
+            rowClearCount++;
             for(int i = bricks.Count - 1; i >= 0; i--)
             {
                 bricks[i].RemovePart(r);
             }
         }
+        AppsFlyerMMP.LineClearedCount(rowClearCount);
         foreach (Brick br in bricks)
         {
             br.UpdateBorder();
@@ -648,6 +651,46 @@ public class MainController : BaseController {
 
     private void ShowEndGame(bool isClassic, bool complete = false)
     {
+        AppsFlyerMMP.Score(totalScore);
+        if (isClassic == false)
+            if(complete == true)
+            {
+                AppsFlyerMMP.LevelCompleted();
+                if (currWorld == 1)
+                {
+                    Debug.Log("Beginner level done");
+                    if(currLevel == 15)
+                    {
+                        AppsFlyerMMP.ChallengeModeBeginnerCompleted();
+                    }
+                }
+                else if(currWorld == 2)
+                {
+                    Debug.Log("Advanced level done");
+                    if (currLevel == 15)
+                    {
+                        AppsFlyerMMP.ChallengeModeAdvancedCompleted();
+                    }
+                }
+                else if (currWorld == 3)
+                {
+                    Debug.Log("Master level done");
+                    if (currLevel == 15)
+                    {
+                        AppsFlyerMMP.ChallengeModeMasterCompleted();
+                    }
+                }
+                else if (currWorld == 4)
+                {
+                    Debug.Log("Expert level done");
+                    if (currLevel == 15)
+                    {
+                        AppsFlyerMMP.ChallengeModeExpertCompleted();
+                    }
+                }
+
+            }
+                
         gameState = GAMESTATE.ENDGAME;
         Sound.instance.Play(Sound.Others.EndGame);
         CUtils.ShowInterstitialAd();

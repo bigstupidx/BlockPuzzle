@@ -248,6 +248,24 @@ public class Purchaser : MonoBehaviour, IStoreListener
                 item = i;
             }
         }
+        if (String.Equals(item.productID, "tetris.item1", StringComparison.Ordinal))
+            AppsFlyerMMP.InAppPurchase20Rubies();
+        else if (String.Equals(item.productID, "tetris.item2", StringComparison.Ordinal))
+            AppsFlyerMMP.InAppPurchase50Rubies();
+        else if (String.Equals(item.productID, "tetris.item3", StringComparison.Ordinal))
+            AppsFlyerMMP.InAppPurchase120Rubies();
+        else if (String.Equals(item.productID, "tetris.item4", StringComparison.Ordinal))
+            AppsFlyerMMP.InAppPurchase200Rubies();
+            
+        /*if (String.Equals(item.productID, "com.blast.wordbakery.50rubies", StringComparison.Ordinal))
+            AppsFlyerMMP.InAppPurchase20Rubies();
+        else if (String.Equals(item.productID, "com.blast.wordbakery.110rubies", StringComparison.Ordinal))
+            AppsFlyerMMP.InAppPurchase50Rubies();
+        else if (String.Equals(item.productID, "com.blast.wordbakery.250rubies", StringComparison.Ordinal))
+            AppsFlyerMMP.InAppPurchase120Rubies();
+        else if (String.Equals(item.productID, "com.blast.wordbakery.450rubies", StringComparison.Ordinal))
+            AppsFlyerMMP.InAppPurchase200Rubies();
+        else if (String.Equals(item.productID, "com.blast.wordbakery.1100rubies", StringComparison.Ordinal))*/
 
         if (onItemPurchased != null) onItemPurchased(item, Array.IndexOf(iapItems, item));
 

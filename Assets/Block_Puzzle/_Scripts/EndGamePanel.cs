@@ -74,10 +74,19 @@ public class EndGamePanel : MonoBehaviour {
 
         if (unlockWorld <= Const.NUM_WORLD && total >= Const.UNLOCK_STARS[unlockWorld])
             LevelController.SetUnlockWorld(unlockWorld + 1);
+
+        if (total == 30)
+            AppsFlyerMMP.UnlockedAdvancedChallengeMode();
+        else if (total == 60)
+            AppsFlyerMMP.UnlockedMasterChallengeMode();
+        else if (total == 90)
+            AppsFlyerMMP.UnlockedExpertChallengeMode();
+
     }
 
     public IEnumerator UpdateStars(int num)
     {
+        int starsCount = 0;
         for (int i = 0; i < stars.Length; i++)
         {
             stars[i].Rebind();
@@ -86,10 +95,12 @@ public class EndGamePanel : MonoBehaviour {
                 stars[i].SetTrigger("show");
                 int idx = i;
                 PlaySound(idx);
+                starsCount++;
             }
             else break;
             yield return new WaitForSeconds(0.4f);
         }
+        AppsFlyerMMP.Stars(starsCount);
     }
 
     public void PlaySound(int i)
