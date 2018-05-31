@@ -1,4 +1,4 @@
-﻿using GoogleMobileAds.Api;
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,19 +14,14 @@ public class RewardedVideoButton : MonoBehaviour
 
     private void AddEvents()
     {
-#if (UNITY_ANDROID || UNITY_IOS)
-        if (AdmobController.instance.rewardBasedVideo != null)
-        {
-            AdmobController.instance.rewardBasedVideo.OnAdRewarded += HandleRewardBasedVideoRewarded;
-        }
-#endif
     }
 
     public void OnClick()
     {
         if (IsAvailableToShow())
         {
-            AdmobController.instance.ShowRewardBasedVideo();
+            //TODO: ADD UNITY ADS CALL HERE
+            //AdmobController.instance.ShowRewardBasedVideo();
         }
         else if (!IsActionAvailable())
         {
@@ -55,12 +50,7 @@ public class RewardedVideoButton : MonoBehaviour
         
         Sound.instance.PlayButton();
     }
-
-    public void HandleRewardBasedVideoRewarded(object sender, Reward args)
-    {
-
-    }
-
+    
     public bool IsAvailableToShow()
     {
         return IsActionAvailable() && IsAdAvailable();
@@ -73,18 +63,15 @@ public class RewardedVideoButton : MonoBehaviour
 
     private bool IsAdAvailable()
     {
-        if (AdmobController.instance.rewardBasedVideo == null) return false;
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+            return false;
+        return true;
+        /*if (AdmobController.instance.rewardBasedVideo == null) return false;
         bool isLoaded = AdmobController.instance.rewardBasedVideo.IsLoaded();
-        return isLoaded;
+        return isLoaded;*/
     }
 
     private void OnDestroy()
     {
-#if (UNITY_ANDROID || UNITY_IOS)
-        if (AdmobController.instance.rewardBasedVideo != null)
-        {
-            AdmobController.instance.rewardBasedVideo.OnAdRewarded -= HandleRewardBasedVideoRewarded;
-        }
-#endif
     }
 }

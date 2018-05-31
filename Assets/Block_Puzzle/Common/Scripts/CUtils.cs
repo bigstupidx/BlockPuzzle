@@ -540,9 +540,6 @@ public class CUtils
         if (IsActionAvailable("show_ads", ConfigController.Config.adPeriod))
         {
 #if (UNITY_ANDROID || UNITY_IPHONE)
-            bool result = AdmobController.instance.ShowInterstitial();
-            if (result == false) AdmobController.instance.RequestInterstitial();
-            else SetActionTime("show_ads");
 #endif
         }
     }
@@ -552,7 +549,6 @@ public class CUtils
         if (IsAdsRemoved()) return;
 
 #if (UNITY_ANDROID || UNITY_IPHONE)
-        AdmobController.instance.ShowBanner();
 #else
         if (JobWorker.instance.onShowBanner != null) JobWorker.instance.onShowBanner();
 #endif
@@ -561,7 +557,6 @@ public class CUtils
     public static void CloseBannerAd()
     {
 #if (UNITY_ANDROID || UNITY_IPHONE)
-        AdmobController.instance.HideBanner();
 #else
         if (JobWorker.instance.onCloseBanner != null) JobWorker.instance.onCloseBanner();
 #endif

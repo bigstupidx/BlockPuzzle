@@ -52,9 +52,9 @@ public class JobWorker : MonoBehaviour
     {
         if (Social.localUser.authenticated)
         {
-            Social.ReportScore(score, GPGSIds.leaderboard_high_score, (bool postSuccess) => {
+            //Social.ReportScore(score, GPGSIds.leaderboard_high_score, (bool postSuccess) => {
                 // handle success or failure
-            });
+            //});
         }
     }
 }
