@@ -148,7 +148,7 @@ PlayerSettings:
     tvOS: com.supow.xtetris
   buildNumber:
     iOS: 0
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -223,7 +223,7 @@ PlayerSettings:
   AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: C:/Users/BLAST/Documents/GitHub/BlockPuzzle/btks.keystore
-  AndroidKeyaliasName: 
+  AndroidKeyaliasName: btks
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 0
