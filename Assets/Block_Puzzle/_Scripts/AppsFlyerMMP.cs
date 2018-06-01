@@ -18,7 +18,7 @@ public class AppsFlyerMMP : MonoBehaviour {
         AppsFlyer.trackAppLaunch ();
 #elif UNITY_ANDROID
         //Mandatory - set your Android package name
-        AppsFlyer.setAppID("////");
+        AppsFlyer.setAppID("com.blast.bloxtetris");
         //Mandatory - set your AppsFlyer’s Developer key.
         AppsFlyer.init("aTYJZVwsYCTz8BbnbrDbxL", "AppsFlyerTrackerCallbacks");
 

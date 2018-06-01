@@ -1546,19 +1546,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iapItems:
-  - productID: tetris.item1
+  - productID: com.blast.bloxtetris.20rubies
     productType: 0
     price: 0.99
     value: 20
-  - productID: tetris.item2
+  - productID: com.blast.bloxtetris.50rubies
     productType: 0
     price: 1.99
     value: 50
-  - productID: tetris.item3
+  - productID: com.blast.bloxtetris.120rubies
     productType: 0
     price: 3.99
     value: 120
-  - productID: tetris.item4
+  - productID: com.blast.bloxtetris.200rubies
     productType: 0
     price: 5.99
     value: 200
