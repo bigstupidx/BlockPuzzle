@@ -264,8 +264,7 @@ public class Purchaser : MonoBehaviour, IStoreListener
         else if (String.Equals(item.productID, "com.blast.wordbakery.250rubies", StringComparison.Ordinal))
             AppsFlyerMMP.InAppPurchase120Rubies();
         else if (String.Equals(item.productID, "com.blast.wordbakery.450rubies", StringComparison.Ordinal))
-            AppsFlyerMMP.InAppPurchase200Rubies();
-        else if (String.Equals(item.productID, "com.blast.wordbakery.1100rubies", StringComparison.Ordinal))*/
+            AppsFlyerMMP.InAppPurchase200Rubies();*/
 
         if (onItemPurchased != null) onItemPurchased(item, Array.IndexOf(iapItems, item));
 

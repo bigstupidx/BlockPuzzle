@@ -104,17 +104,17 @@ public class AppsFlyerMMP : MonoBehaviour {
         else if (count == 2)
         {
             AppsFlyer.trackRichEvent("line_cleared_2", lineClearedCount);
-            Debug.Log("AppsFlyerMMP: Cleared 2 Line");
+            Debug.Log("AppsFlyerMMP: Cleared 2 Lines");
         }
         else if (count == 3)
         {
             AppsFlyer.trackRichEvent("line_cleared_3", lineClearedCount);
-            Debug.Log("AppsFlyerMMP: Cleared 3 Line");
+            Debug.Log("AppsFlyerMMP: Cleared 3 Lines");
         }
         else if (count == 4)
         {
             AppsFlyer.trackRichEvent("line_cleared_4", lineClearedCount);
-            Debug.Log("AppsFlyerMMP: Cleared 4 Line");
+            Debug.Log("AppsFlyerMMP: Cleared 4 Lines");
         }
 
     }
