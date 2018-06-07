@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class EndGamePanel : MonoBehaviour {
     public Image diffImg;
     public Text scoreTxt, lineTxt, highScoreTxt, highLineTxt, timerTxt, timeTypeTxt;
-    public GameObject highScoreObj, starObjs, replayBtn, nextBtn, leaderboardBtn, replaySmallBtn, fbBtn;
+    public GameObject highScoreObj, starObjs, replayBtn, nextBtn, leaderboardBtn, replaySmallBtn;
     public Image status;
     public RectTransform infor;
     public Sprite gameoverSprite, completeSprite;
@@ -25,7 +25,6 @@ public class EndGamePanel : MonoBehaviour {
         nextBtn.SetActive(complete);
         leaderboardBtn.SetActive(isClassic);
         replaySmallBtn.SetActive(complete);
-        fbBtn.SetActive(!isClassic && !complete);
         //time
         timeTypeTxt.text = isClassic ? "TIME" : "REMAINING TIME";
         System.TimeSpan t = System.TimeSpan.FromSeconds(time);

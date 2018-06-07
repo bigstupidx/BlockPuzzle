@@ -7,7 +7,7 @@ public class UnityAds : MonoBehaviour {
     public static UnityAds instance;
     public bool rewardZone;
     public bool isAdShowing = false;
-
+    private int blastAdCounter;
     void Awake()
     {
         instance = this;
@@ -29,23 +29,38 @@ public class UnityAds : MonoBehaviour {
 
     public void ShowAd(string zone = "")
     {
-#if UNITY_EDITOR
-        //StartCoroutine(WaitForAd());
-#endif
-        isAdShowing = true;
-        if (string.Equals(zone, ""))
-            zone = null;
-        else
-            rewardZone = true;
-
-        ShowOptions options = new ShowOptions();
-        options.resultCallback = AdCallbackhandler;
-
-        if (Advertisement.IsReady(zone))
+        blastAdCounter++;
+        if(blastAdCounter == 3)
         {
-            Advertisement.Show(zone, options);
-            Debug.Log("Show AD");
+            BlastAd.instance.ShowBlastAd();
+            blastAdCounter = 0;
+            //reward the player since this is only called in a rewarded video ad button
+            int amount = ConfigController.Config.rewardedVideoAmount;
+            CurrencyController.CreditBalance(amount);
+            string unit = amount == 1 ? " ruby" : " rubies";
+            BlastAd.instance.isRewardedAd = true;
         }
+        else
+        {
+#if UNITY_EDITOR
+            //StartCoroutine(WaitForAd());
+#endif
+            isAdShowing = true;
+            if (string.Equals(zone, ""))
+                zone = null;
+            else
+                rewardZone = true;
+
+            ShowOptions options = new ShowOptions();
+            options.resultCallback = AdCallbackhandler;
+
+            if (Advertisement.IsReady(zone))
+            {
+                Advertisement.Show(zone, options);
+                Debug.Log("Show AD");
+            }
+        }
+
             
 
         
